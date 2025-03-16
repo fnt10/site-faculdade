@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background-color: #003983;
+    color: white;
+    padding: 20px 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1, header nav {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.imagem-baixo-cabecalho img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px auto;
+}
+
+header .logo h1 {
+    font-size: 2.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+.pagina-sobre {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.pagina-sobre h1 {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.pagina-sobre h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.noticias-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.noticias {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    width: 80%;
+}
+
+.noticia-item {
+    text-align: center;
+    width: 30%;
+    flex-shrink: 0;
+}
+
+.noticia-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-item h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.noticia-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.arrow {
+    background-color: #ffffff;
+    color: #003983;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+footer {
+    background-color: #003983;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.pagina-disciplinas body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.pagina-disciplinas header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.pagina-disciplinas main {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info, .notas {
+    margin-bottom: 20px;
+}
+
+.pagina-disciplinas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.pagina-disciplinas th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.pagina-disciplinas th {
+    background-color: #003366;
+    color: white;
+}
+
+.login-container body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.login-container header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-container header button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.login-container main {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info, .notas {
+    margin-bottom: 20px;
+}
+
+.login-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.login-container th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}

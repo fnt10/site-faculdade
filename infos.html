@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidade Uniber</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Universidade Uniber</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="disciplinas.html">Disciplinas</a></li>
+                <li><a href="financeiro.html">Financeiro</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section>
+        <section class="cabecalho-dados">
+        <h1>Bem-vindo, <span id="user-name">Usuário</span>!</h1>
+        <button onclick="logout()">Sair</button>
+    </section>
+
+    <main>
+        <section class="user-info">
+            <h2>Dados do Usuário</h2>
+            <p><strong>Nome:</strong> <span id="nome"></span></p>
+            <p><strong>CPF:</strong> <span id="cpf"></span></p>
+        </section>
+
+        <section class="notas">
+            <h2>Notas do Semestre</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Disciplina</th>
+                        <th>1º Semestre</th>
+                        <th>2º Semestre</th>
+                        <th>Média</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-notas">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let nome = localStorage.getItem("usuarioNome");
+            let cpf = localStorage.getItem("usuarioCPF");
+
+            if (!nome || !cpf) {
+                window.location.href = "login.html";
+            }
+
+            document.getElementById("nome").textContent = nome;
+            document.getElementById("cpf").textContent = cpf;
+            document.getElementById("user-name").textContent = nome.split(" ")[0];
+
+            let usuario = {
+                notas: [
+                    { disciplina: "ESTRUTURA DE DADOS", primeiro: 7.5, segundo: 8.0 },
+                    { disciplina: "MENTALIDADE CRIATIVA E EMPREENDEDORA", primeiro: 6.0, segundo: 7.0 },
+                    { disciplina: "PROGRAMAÇÃO FRONT END", primeiro: 8.0, segundo: 7.5 },
+                    { disciplina: "ANÁLISE E PROJETO ORIENTADO A OBJETOS", primeiro: 5.5, segundo: 6.5 }
+                ]
+            };
+
+            let tabela = document.getElementById("tabela-notas");
+            usuario.notas.forEach(nota => {
+                let media = ((nota.primeiro + nota.segundo) / 2).toFixed(1);
+                let linha = `
+                    <tr>
+                        <td>${nota.disciplina}</td>
+                        <td>${nota.primeiro}</td>
+                        <td>${nota.segundo}</td>
+                        <td>${media}</td>
+                    </tr>
+                `;
+                tabela.innerHTML += linha;
+            });
+        });
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Universidade Uniber - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
